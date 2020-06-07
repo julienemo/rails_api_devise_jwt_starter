@@ -47,10 +47,10 @@ visualize public info for all users
 **GET /users/id**
 visualize public info for specified user
 
-**GET /profile**
+**GET /api/v1/profile**
 visualize own profile, all info except for password
 
-**DELETE /profile**
+**DELETE /api/v1/profile**
 
 answer 
 ```{
@@ -59,7 +59,7 @@ answer
 }
 ```
 
-**PATCH or PUT /profile**
+**PATCH or PUT /api/v1/profile**
 
 data-form body:
 ```
