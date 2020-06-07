@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users,
              path: '',
              path_names: {
@@ -11,7 +10,10 @@ Rails.application.routes.draw do
                sessions: 'sessions',
                registrations: 'registrations'
              }
-  resources :users, except: [:create]
+  resources :users, except: [:create, :destroy]
 
-  get "/profile" => "profiles#index"
+  get '/profile' => 'profiles#index'
+  delete '/profile' => 'profiles#destroy'
+  patch '/profile' => 'profiles#update'
+  put '/profile' => 'profiles#update'
 end

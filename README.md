@@ -50,24 +50,20 @@ visualize public info for specified user
 **GET /profile**
 visualize own profile, all info except for password
 
-**PATCH /users/id**
-
-only allowed on one's own profile
-
-data-form body:
-```
-{
-  user[username]: "something"
-}
-```
-
-**DELETE /users/id**
-
-only allowed on one's own profile
+**DELETE /profile**
 
 answer 
 ```{
   id: 3
   status: 'user deleted'
+}
+```
+
+**PATCH or PUT /profile**
+
+data-form body:
+```
+{
+  user[username]: "something"
 }
 ```
