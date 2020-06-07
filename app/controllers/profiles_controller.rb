@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
   def destroy
     id = @user.id
     @user.destroy
-    render json: { id: id, status: 'user deleted' }
+    render json: { id: id, detail: 'user deleted', status: "ok" }
   end
 
   private

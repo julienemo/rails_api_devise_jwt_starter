@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    render json: { error: 'Not Found', detail: 'The resource you are looking for does not exist'}
+    render json: { error: 'Not Found', detail: 'The resource you are looking for does not exist' }
   end
 
   def public_info(user)

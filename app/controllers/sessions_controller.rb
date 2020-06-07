@@ -8,6 +8,6 @@ class SessionsController < Devise::SessionsController
   end
 
   def respond_to_on_destroy
-    head :no_content
+    render json: { id: current_user.id, detail: 'user logged out', status: "ok" }
   end
 end

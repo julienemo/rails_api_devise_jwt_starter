@@ -19,11 +19,16 @@ class ApplicationController < ActionController::API
   end
 
   def validation_error(resource)
+    readable_errors = resource
+                      .errors
+                      .messages
+                      .to_a
+                      .map { |msg| msg[1].map { |el| "#{msg[0]} #{el}".capitalize } }
+                      .flatten
     render json: {
-      error: 'Bad request',
+      error: 'Invalid user information',
       status: '400',
-      code: '100',
-      details: resource.errors
+      details: readable_errors
     }, status: :bad_request
   end
 
