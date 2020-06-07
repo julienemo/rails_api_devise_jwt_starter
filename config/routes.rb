@@ -12,8 +12,12 @@ Rails.application.routes.draw do
              }
   resources :users, except: [:create, :destroy]
 
-  get '/profile' => 'profiles#index'
-  delete '/profile' => 'profiles#destroy'
-  patch '/profile' => 'profiles#update'
-  put '/profile' => 'profiles#update'
+  namespace 'api' do
+    namespace 'v1' do
+      get '/profile' => 'profiles#index'
+      delete '/profile' => 'profiles#destroy'
+      patch '/profile' => 'profiles#update'
+      put '/profile' => 'profiles#update'
+    end
+  end
 end
